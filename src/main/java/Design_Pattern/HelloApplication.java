@@ -1,19 +1,43 @@
 package main.java.Design_Pattern;
 
-import main.java.Design_Pattern.Structural.Adapter.PaymentExample.PaymentTypes.NewWayPayment;
-import main.java.Design_Pattern.Structural.Adapter.PaymentExample.PaymentGatewayAdapter;
+import main.java.Design_Pattern.Structural.Adapter.SoapToRestfulResponse.Services.SoapService;
+import main.java.Design_Pattern.Structural.Adapter.SoapToRestfulResponse.SoapToRestAdapter;
 
 public class HelloApplication {
 
 
     public static void main(String[] args) {
 
-        NewWayPayment newPay=new NewWayPayment();
+        SoapService soapService=new SoapService();
+
+        SoapToRestAdapter soapToRestAdapter=new SoapToRestAdapter(soapService);
+
+        System.out.println(soapToRestAdapter.getUserInfo("123"));
 
 
-        PaymentGatewayAdapter paymentAdapter=new PaymentGatewayAdapter(newPay);
 
-        paymentAdapter.payment("amir","mamdouh","1000");
+//        PizzaX pizzaX=new PizzaX();
+//        PizzaDecorator biffDecorator=new BiffDecorator(pizzaX);
+//        PizzaDecorator cheesePizzaDecorator=new CheesePizzaDecorator(biffDecorator);
+//        System.out.println(cheesePizzaDecorator.getDescription());
+//        System.out.println(cheesePizzaDecorator.getCost());
+//        System.out.println("----------------------");
+
+//        System.out.println(cheesePizzaDecorator.description());
+//        System.out.println(cheesePizzaDecorator.cost());
+
+//        FacadeClass facade=new FacadeClass(new DVDPlayer(),new Projector(),new SoundSystem());
+//        facade.watchMovie();
+//        facade.endMovie();
+
+
+
+//        NewWayPayment newPay=new NewWayPayment();
+//
+//
+//        PaymentGatewayAdapter paymentAdapter=new PaymentGatewayAdapter(newPay);
+//
+//        paymentAdapter.payment("amir","mamdouh","1000");
 
 
 

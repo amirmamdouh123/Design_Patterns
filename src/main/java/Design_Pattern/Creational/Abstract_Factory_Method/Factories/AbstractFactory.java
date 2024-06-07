@@ -4,5 +4,5 @@ import main.java.Design_Pattern.Creational.Abstract_Factory_Method.Components.Co
 
 public interface AbstractFactory {
 
-    Component createComponent(String componentType);
+    public Component createComponent(String componentType);
 }
